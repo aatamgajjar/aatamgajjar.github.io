@@ -1,5 +1,5 @@
 ## Hi, I'm Aatam! 
-### Reader, Learner and a Cricket Geek!
+### I (try to) read, learn and grow constantly.
 
 
 This is a draft website where I'll be sharing my projects, research and blogs!

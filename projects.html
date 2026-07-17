@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Aatam Gajjar</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="canonical" href="https://www.aatamgajjar.com/projects.html">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>
+  (function () {
+    if (location.hostname === "aatamgajjar.github.io") {
+      var robotsMeta = document.createElement("meta");
+      robotsMeta.name = "robots";
+      robotsMeta.content = "noindex, nofollow";
+      document.head.appendChild(robotsMeta);
+    }
+    try {
+      var saved = localStorage.getItem("theme");
+      if (saved) document.documentElement.setAttribute("data-theme", saved);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<div class="toggle-row">
+  <button id="theme-toggle-btn" class="theme-toggle" onclick="toggleTheme(this)" aria-label="Toggle dark mode"></button>
+</div>
+
+<div id="site-header" data-active="projects" data-variant="slim"></div>
+
+<div class="page">
+  <h2 class="page-title">Projects</h2>
+
+  <div class="proj-grid">
+
+    <div class="proj-card">
+      <p class="proj-title">PhD Dissertation: Secure by Design</p>
+      <div class="proj-tags">
+        <span class="proj-tag">Controls</span>
+        <span class="proj-tag">Cybersecurity</span>
+        <span class="proj-tag">Process Systems</span>
+      </div>
+      <p class="proj-desc">Designing process control systems so that cyberattacks can be isolated and identified by construction, not just detected after the fact.</p>
+      <div class="proj-links">
+        <a class="proj-link" href="phd-dissertation.html">Read more →</a>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <p class="proj-title">MS Thesis: Learning to Adapt</p>
+      <div class="proj-tags">
+        <span class="proj-tag">Controls</span>
+        <span class="proj-tag">Machine Learning</span>
+        <span class="proj-tag">Process Systems</span>
+      </div>
+      <p class="proj-desc">A machine learning and model-based framework for detecting, estimating, and correcting multiple simultaneous sensor faults in real time.</p>
+      <div class="proj-links">
+        <a class="proj-link" href="ms-thesis.html">Read more →</a>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <p class="proj-title">HVAC Energy Forecasting</p>
+      <div class="proj-tags">
+        <span class="proj-tag">Data Science</span>
+        <span class="proj-tag">Forecasting</span>
+        <span class="proj-tag">Energy Systems</span>
+      </div>
+      <p class="proj-desc">Built time-series forecasting models to optimize HVAC scheduling on UC Davis campus buildings based on occupancy data, projecting a 15% reduction in weekly energy costs. Class project with a small team.</p>
+      <div class="proj-links">
+        <a class="proj-link" href="https://drive.google.com/file/d/1MII1AtB6Gh5oyrwdJVQnEZBfto_Cwvmn/view" target="_blank" rel="noopener noreferrer">Read more →</a>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <p class="proj-title">Rocket Landing Prediction</p>
+      <div class="proj-tags">
+        <span class="proj-tag">Data Science</span>
+        <span class="proj-tag">Machine Learning</span>
+      </div>
+      <p class="proj-desc">Built a data-driven framework to predict successful rocket landings using feature engineering and supervised learning, achieving 94% cross-validation accuracy.</p>
+      <div class="proj-links">
+        <a class="proj-link" href="https://github.com/aatamgajjar/IBMDataScience/tree/master/10_Applied%20DataScience%20Capstone" target="_blank" rel="noopener noreferrer">Read more →</a>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <p class="proj-title">MIMO Chemical Process Control</p>
+      <div class="proj-tags">
+        <span class="proj-tag">Controls</span>
+        <span class="proj-tag">Process Systems</span>
+      </div>
+      <p class="proj-desc">Modeled a multi-input, multi-output chemical process in Python and designed an LQR controller to stabilize the system.</p>
+      <div class="proj-links">
+        <a class="proj-link" href="https://drive.google.com/file/d/1ytCNLZgrihBBL7Kt_eeb_el8fLb3mDOo/view" target="_blank" rel="noopener noreferrer">Report →</a>
+        <a class="proj-link" href="https://drive.google.com/file/d/18-s_3wjSiVlRhk_sXy_BMNZG-F4lU6wC/view" target="_blank" rel="noopener noreferrer">Presentation →</a>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <p class="proj-title">Autonomous Vehicle MPC</p>
+      <div class="proj-tags">
+        <span class="proj-tag">Controls</span>
+        <span class="proj-tag">Robotics</span>
+      </div>
+      <p class="proj-desc">Built a nonlinear model predictive control framework for autonomous vehicle motion planning, handling lane following and obstacle avoidance.</p>
+    </div>
+
+    <div class="proj-card">
+      <p class="proj-title">Production of Phenol</p>
+      <div class="proj-tags">
+        <span class="proj-tag">Process Design</span>
+        <span class="proj-tag">Economics</span>
+      </div>
+      <p class="proj-desc">Undergraduate capstone project: end-to-end plant design for phenol production, covering process synthesis, mass and energy balances, equipment design, plant layout and site selection, Aspen Plus simulation, cost estimation, and safety and effluent treatment considerations.</p>
+      <div class="proj-links">
+        <a class="proj-link" href="https://drive.google.com/file/d/1gcLF7qoZGfSNwe5HCOr2qQPapR07qDgi/view" target="_blank" rel="noopener noreferrer">Read more →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Aatam Gajjar</title>
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+<link rel="canonical" href="https://www.aatamgajjar.com/blog/">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script>
+  window.SITE_BASE = "../";
+  (function () {
+    if (location.hostname === "aatamgajjar.github.io") {
+      var robotsMeta = document.createElement("meta");
+      robotsMeta.name = "robots";
+      robotsMeta.content = "noindex, nofollow";
+      document.head.appendChild(robotsMeta);
+    }
+    try {
+      var saved = localStorage.getItem("theme");
+      if (saved) document.documentElement.setAttribute("data-theme", saved);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<div class="toggle-row">
+  <button id="theme-toggle-btn" class="theme-toggle" onclick="toggleTheme(this)" aria-label="Toggle dark mode"></button>
+</div>
+
+<div id="site-header" data-active="blog" data-variant="slim"></div>
+
+<div class="page">
+  <h2 class="page-title">Blog</h2>
+
+  <!-- New posts go here as one line each, see blog-post-tool.html for the generator. Remove the "No posts yet" line below once the first real post is added. -->
+  <div class="roles" id="post-list"></div>
+  <p class="page-placeholder">No posts yet.</p>
+
+  <section class="outside">
+    <p class="eyebrow">Also, Cricket</p>
+    <p class="page-intro">Before grad school, I wrote cricket analysis for Sportskeeda: match retrospectives, statistical comparisons between players, and the occasional all-time-XI list. A few examples: "Sachin Tendulkar vs Virat Kohli: A statistical analysis," "Cheteshwar Pujara vs Rahul Dravid: A statistical analysis," and "Cricket World Cup History: Reliving India's journey to the 1983 World Cup triumph." <a href="https://www.sportskeeda.com/author/aatam-gajjar" target="_blank" rel="noopener noreferrer">All 24 articles →</a></p>
+  </section>
+</div>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

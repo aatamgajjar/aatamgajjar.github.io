@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PhD Dissertation — Aatam Gajjar</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="canonical" href="https://www.aatamgajjar.com/phd-dissertation.html">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>
+  (function () {
+    if (location.hostname === "aatamgajjar.github.io") {
+      var robotsMeta = document.createElement("meta");
+      robotsMeta.name = "robots";
+      robotsMeta.content = "noindex, nofollow";
+      document.head.appendChild(robotsMeta);
+    }
+    try {
+      var saved = localStorage.getItem("theme");
+      if (saved) document.documentElement.setAttribute("data-theme", saved);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<div class="toggle-row">
+  <button id="theme-toggle-btn" class="theme-toggle" onclick="toggleTheme(this)" aria-label="Toggle dark mode"></button>
+</div>
+
+<div id="site-header" data-variant="slim"></div>
+
+<div class="page">
+  <p class="eyebrow">PhD Dissertation</p>
+  <h2 class="page-title">Secure by Design: Enabling Cyberattack Identification through Process Control Structure and Configuration Selection</h2>
+  <p class="thesis-meta">PhD, Chemical Engineering, UC Davis &middot; Advised by Nael El-Farra &middot; Sep 2021 &ndash; Present</p>
+
+  <div class="thesis-media">
+    <img src="assets/img/projects/phd-workflow.png" alt="Networked process control system diagram showing the attack surface between IT/OT systems, the control system, attack detection alarm system, sensors, and actuators">
+  </div>
+
+  <div class="thesis-body">
+    <p>My dissertation asks a simple question: can a chemical plant's control system be designed so that a cyberattack is impossible to hide, before the plant is even built? Most cybersecurity work focuses on detecting attacks after the fact. I found that some attacks are fundamentally indistinguishable from ordinary process noise, no matter how good the detection algorithm is, unless the control system itself was designed with that possibility in mind.</p>
+    <p>To address this, I developed a set of metrics that score a candidate control system design on how well it can isolate a cyberattack to a specific sensor or actuator, before deployment. The methodology also identifies the minimum design changes needed to fix a vulnerable design, and extends from single control loops to networks of interconnected units, including how much communication between units is actually necessary to stay secure. The goal throughout is to make cyberattack resilience a design choice, not just a patch applied after the fact.</p>
+  </div>
+</div>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

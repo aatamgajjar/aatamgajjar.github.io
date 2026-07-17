@@ -1,0 +1,306 @@
+:root{
+  --bg:#faf8f3; --ink:#1c2521; --accent:#2b6e6b; --line:#d8d2c4; --muted:#726a5c; --paper2:#f2efe6;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#14201d; --ink:#e9e4d8; --accent:#7fd6c9; --line:#2c3833; --muted:#a39c8c; --paper2:#182521; }
+}
+:root[data-theme="dark"]{ --bg:#14201d; --ink:#e9e4d8; --accent:#7fd6c9; --line:#2c3833; --muted:#a39c8c; --paper2:#182521; }
+:root[data-theme="light"]{ --bg:#faf8f3; --ink:#1c2521; --accent:#2b6e6b; --line:#d8d2c4; --muted:#726a5c; --paper2:#f2efe6; }
+
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Iowan Old Style","Palatino Linotype","URW Palladio",Georgia,serif;
+  line-height:1.5;
+}
+.sans{ font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; }
+.mono{ font-family:ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace; }
+
+a{ color:inherit; }
+
+.page{
+  max-width:760px; margin:0 auto; padding:2.5rem clamp(1.25rem,5vw,2.5rem) 4rem;
+}
+
+/* ---- Shared header ---- */
+.toggle-row{ max-width:760px; margin:0 auto; padding:1.2rem clamp(1.25rem,5vw,2.5rem) 0; display:flex; justify-content:flex-end; }
+.theme-toggle{
+  display:flex; align-items:center; justify-content:center;
+  width:34px; height:34px; border-radius:50%;
+  background:transparent; border:1px solid var(--line); color:var(--ink);
+  padding:0; cursor:pointer;
+}
+.theme-toggle svg{ width:16px; height:16px; }
+.theme-toggle:hover{ border-color:var(--accent); color:var(--accent); }
+
+header.hero{
+  max-width:760px; margin:0 auto; padding:1.4rem clamp(1.25rem,5vw,2.5rem) 2rem;
+  display:flex; gap:1.4rem; align-items:flex-start;
+  border-bottom:1px solid var(--line);
+}
+.avatar{
+  flex:none; width:192px; height:192px; border-radius:14px;
+  background:var(--paper2); border:1px solid var(--line);
+  overflow:hidden;
+}
+.avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+.hero-text{ flex:1; min-width:0; }
+.hero-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; flex-wrap:wrap; }
+h1{
+  font-size:clamp(1.7rem,4vw,2.15rem); font-weight:500; margin:0 0 0.4rem; text-wrap:balance; letter-spacing:-0.01em;
+}
+.hero-text h1 a{ text-decoration:none; color:inherit; }
+.tagline{ font-size:1rem; color:var(--muted); max-width:36em; margin:0.2rem 0 0; }
+
+@media (max-width:560px){
+  .avatar{ width:120px; height:120px; }
+}
+
+/* Slim header variant: inner pages (name + nav only, no photo, no tagline) */
+header.hero.hero-slim{ padding:1.1rem clamp(1.25rem,5vw,2.5rem) 1.3rem; gap:1rem; }
+.hero-slim h1{ font-size:1.25rem; margin:0; }
+.hero-slim nav.primary{ margin-top:0.7rem; }
+
+.icons{ display:flex; gap:0.7rem; flex:none; padding-top:0.3rem; }
+.icons a{
+  display:flex; align-items:center; justify-content:center;
+  width:30px; height:30px; border-radius:50%; border:1px solid var(--line);
+  color:var(--muted); text-decoration:none;
+}
+.icons a:hover, .icons a:focus-visible{ color:var(--accent); border-color:var(--accent); }
+.icons svg{ width:15px; height:15px; }
+
+nav.primary{
+  display:flex; gap:1.5rem; margin-top:1.1rem; flex-wrap:wrap;
+  font-family:ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace;
+  font-size:0.76rem; letter-spacing:0.04em; text-transform:uppercase;
+}
+nav.primary a{ color:var(--muted); text-decoration:none; border-bottom:1px solid transparent; }
+nav.primary a:hover, nav.primary a:focus-visible{ color:var(--ink); border-color:var(--accent); }
+nav.primary a[aria-current="page"]{ color:var(--ink); border-color:var(--accent); }
+
+@media (max-width:520px){
+  header.hero{ flex-direction:column; }
+  .icons{ padding-top:0.6rem; }
+}
+
+/* ---- Home: curve row ---- */
+.curve-row{
+  display:flex; align-items:center; gap:2rem; flex-wrap:wrap;
+  padding:1.6rem 0 2.2rem; border-bottom:1px solid var(--line); margin-bottom:2.4rem;
+}
+.curve-caption{ font-size:0.9rem; color:var(--muted); max-width:26em; }
+.curve-caption strong{ color:var(--ink); font-weight:600; }
+
+/* ---- Home: bio ---- */
+section.bio{
+  padding-bottom:2rem; border-bottom:1px solid var(--line); margin-bottom:2.4rem;
+}
+.bio p{ font-size:1.05rem; line-height:1.7; margin:0; max-width:42em; }
+.bio .bio-more{ margin-top:1rem; }
+.read-more{
+  font:inherit; font-family:ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace;
+  font-size:0.72rem; letter-spacing:0.03em; text-transform:uppercase;
+  background:none; border:none; border-bottom:1px solid var(--accent); color:var(--accent);
+  cursor:pointer; padding:0; margin-left:0.6rem;
+}
+.read-more:hover{ opacity:0.75; }
+
+/* ---- Home: highlights ---- */
+.eyebrow{
+  font-family:ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace;
+  font-size:0.7rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--accent); margin:0 0 0.5rem;
+}
+section.highlights{ margin-bottom:2.6rem; }
+.hl-list{ display:flex; flex-direction:column; }
+.hl-row{ display:flex; gap:1.1rem; align-items:flex-start; padding:1.1rem 0; border-bottom:1px solid var(--line); }
+.hl-logo-chip{
+  flex:none; height:2.3rem; min-width:2.3rem;
+  background:#faf8f3; border:1px solid #e5ded0; border-radius:6px;
+  box-shadow:0 1px 3px rgba(0,0,0,0.18);
+  display:flex; align-items:center; justify-content:center; padding:0.3rem 0.55rem;
+}
+.hl-logo-chip img{ height:100%; width:auto; max-width:6.5rem; object-fit:contain; display:block; }
+.hl-body{ flex:1; min-width:0; padding-top:0.1rem; }
+.hl-org{ font-size:0.86rem; font-weight:600; margin:0 0 0.3rem; color:var(--ink); }
+.hl-text{ font-size:0.92rem; line-height:1.55; margin:0; color:var(--muted); }
+
+/* ---- Home: workstyle ---- */
+section.workstyle{ margin-bottom:2.6rem; }
+.ws-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1rem 1.6rem; }
+.ws-item{ font-size:1.05rem; line-height:1.5; color:var(--muted); padding-top:0.9rem; border-top:1px solid var(--line); }
+.ws-item strong{ font-weight:600; color:var(--ink); display:block; margin-bottom:0.15rem; font-size:1.1rem; }
+@media (max-width:640px){ .ws-grid{ grid-template-columns:1fr; } }
+
+/* ---- Home: recent roles ---- */
+.roles{ display:flex; flex-direction:column; gap:0; }
+.role{
+  display:flex; justify-content:space-between; gap:1rem; align-items:baseline;
+  font-size:0.92rem; padding:0.9rem 0; border-bottom:1px solid var(--line);
+}
+.role .org{ font-weight:600; }
+.role .when{ font-family:ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace; font-size:0.72rem; color:var(--muted); flex:none; }
+
+/* ---- Home: projects teaser ---- */
+section.projects-teaser{ margin-top:2.6rem; }
+.pt-list{ display:flex; flex-direction:column; }
+.pt-row{
+  display:flex; align-items:baseline; gap:1rem; flex-wrap:wrap;
+  padding:0.9rem 0; border-bottom:1px solid var(--line);
+  text-decoration:none; color:inherit;
+}
+.pt-name{ font-weight:600; font-size:0.92rem; flex:none; }
+.pt-desc{ font-size:0.86rem; color:var(--muted); flex:1; min-width:12em; }
+.pt-link{
+  font-family:ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace;
+  font-size:0.7rem; letter-spacing:0.03em; text-transform:uppercase; color:var(--accent); flex:none;
+}
+.pt-row:hover .pt-link{ text-decoration:underline; }
+.pt-row-static{ cursor:default; }
+.pt-all{
+  display:inline-block; margin-top:1rem;
+  font-family:ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace;
+  font-size:0.72rem; letter-spacing:0.03em; text-transform:uppercase; color:var(--accent);
+  text-decoration:none; border-bottom:1px solid var(--accent);
+}
+
+/* ---- Home: outside of work ---- */
+section.outside{ margin-top:2.6rem; padding-top:2rem; border-top:1px solid var(--line); }
+.outside-text{ font-size:0.95rem; line-height:1.6; color:var(--muted); max-width:38em; margin:0; }
+
+/* ---- Shared footer ---- */
+.site-footer{ border-top:1px solid var(--line); margin-top:1rem; }
+.footer-inner{
+  max-width:760px; margin:0 auto; padding:2rem clamp(1.25rem,5vw,2.5rem) 3rem;
+}
+.footer-line{ font-size:0.9rem; color:var(--muted); margin:0 0 0.6rem; }
+.footer-line a{ color:var(--accent); }
+.footer-disclaimer{ font-size:0.78rem; color:var(--muted); margin:1rem 0 0; max-width:42em; }
+.footer-meta{
+  font-family:ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace;
+  font-size:0.7rem; color:var(--muted); margin:1rem 0 0; letter-spacing:0.02em;
+}
+
+/* ---- Back link (Timeline, blog posts) ---- */
+.back-link{
+  display:inline-block; margin-bottom:1.6rem;
+  font-family:ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace;
+  font-size:0.72rem; letter-spacing:0.03em; text-transform:uppercase; color:var(--accent);
+  text-decoration:none; border-bottom:1px solid var(--accent);
+}
+.back-link:hover{ opacity:0.75; }
+
+/* ---- Generic empty page shell ---- */
+.page-title{ font-size:clamp(1.6rem,4vw,2rem); font-weight:500; margin:0 0 0.6rem; letter-spacing:-0.01em; }
+.page-placeholder{ font-size:0.95rem; color:var(--muted); max-width:38em; }
+.page-intro{ font-size:1rem; color:var(--muted); max-width:38em; margin:0 0 2.4rem; }
+
+/* ---- Experience page ---- */
+.exp-list{ display:flex; flex-direction:column; }
+.exp-role{ padding:2rem 0; border-bottom:1px solid var(--line); }
+.exp-list .exp-role:first-child{ padding-top:0; }
+.exp-role-head{ display:flex; gap:1rem; align-items:flex-start; margin-bottom:1.1rem; }
+.exp-org{ font-weight:600; font-size:1rem; margin:0 0 0.15rem; }
+.exp-title-when{ display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; font-size:0.85rem; color:var(--muted); margin:0; }
+.exp-when{ font-family:ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace; flex:none; }
+.exp-bullets{ margin:0; padding-left:1.2rem; display:flex; flex-direction:column; gap:0.6rem; }
+.exp-bullets li{ font-size:0.94rem; line-height:1.6; color:var(--ink); }
+
+.exp-also{ margin-top:1rem; }
+
+/* ---- Projects page ---- */
+.proj-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1.6rem; }
+@media (max-width:640px){ .proj-grid{ grid-template-columns:1fr; } }
+.proj-card{
+  border:1px solid var(--line); border-radius:8px; padding:1.3rem;
+  display:flex; flex-direction:column; gap:0.7rem;
+}
+.proj-media{ width:100%; border-radius:6px; overflow:hidden; }
+.proj-media img{ width:100%; height:auto; display:block; }
+.proj-title{ font-weight:600; font-size:1.02rem; margin:0; }
+.proj-tags{ display:flex; flex-wrap:wrap; gap:0.4rem; }
+.proj-tag{
+  font-family:ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace;
+  font-size:0.65rem; text-transform:uppercase; letter-spacing:0.03em; color:var(--accent);
+  border:1px solid var(--line); border-radius:999px; padding:0.15rem 0.55rem;
+}
+.proj-desc{ font-size:0.9rem; line-height:1.55; color:var(--muted); margin:0; }
+.proj-links{ display:flex; flex-wrap:wrap; gap:1rem; margin-top:auto; }
+.proj-link{
+  font-family:ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace;
+  font-size:0.72rem; text-transform:uppercase; letter-spacing:0.03em; color:var(--accent);
+  text-decoration:none; border-bottom:1px solid var(--accent);
+}
+.proj-link:hover{ opacity:0.75; }
+
+/* ---- Standalone thesis/dissertation pages (off top nav, linked from Projects) ---- */
+.thesis-meta{ font-size:0.85rem; color:var(--muted); margin:0 0 1.8rem; }
+.thesis-media{
+  width:100%; border-radius:8px; margin-bottom:1.8rem; overflow:hidden;
+  background:#faf8f3; border:1px solid var(--line); padding:1.2rem;
+}
+.thesis-media img{ width:100%; height:auto; display:block; }
+.thesis-media-placeholder{
+  aspect-ratio:16/9; padding:0;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--paper2); border:1px dashed var(--line); color:var(--muted);
+  font-family:ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace;
+  font-size:0.78rem; letter-spacing:0.03em; text-transform:uppercase;
+}
+.thesis-body p{ font-size:1rem; line-height:1.7; margin:0 0 1.2rem; max-width:42em; }
+.thesis-body p:last-child{ margin-bottom:0; }
+
+/* ---- Publications page: grouped left-rail timeline ---- */
+.pub-group{ margin-bottom:2.8rem; }
+.pub-group-title{ font-size:1.1rem; font-weight:600; margin:0 0 1.4rem; }
+.pub-timeline{
+  display:flex; flex-direction:column; gap:1.8rem;
+  padding-left:1.4rem; border-left:2px solid var(--line);
+}
+.pub-item{ position:relative; }
+.pub-item::before{
+  content:""; position:absolute; left:-1.52rem; top:0.3rem;
+  width:9px; height:9px; border-radius:50%;
+  background:var(--accent); border:2px solid var(--bg);
+}
+.pub-when{
+  font-family:ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace;
+  font-size:0.7rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--accent);
+  margin:0 0 0.35rem;
+}
+.pub-title{ font-weight:600; font-size:0.96rem; margin:0 0 0.3rem; line-height:1.4; }
+.pub-venue{ font-size:0.82rem; color:var(--muted); font-style:italic; margin:0 0 0.55rem; }
+.pub-authors{ font-size:0.82rem; color:var(--muted); margin:0 0 0.55rem; }
+.pub-authors strong{ color:var(--ink); font-weight:600; }
+.pub-desc{ font-size:0.9rem; line-height:1.6; color:var(--ink); margin:0 0 0.6rem; max-width:42em; }
+.pub-note{ font-size:0.78rem; color:var(--muted); margin:0.4rem 0 0; font-style:italic; }
+.pub-link{
+  font-family:ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace;
+  font-size:0.7rem; text-transform:uppercase; letter-spacing:0.03em; color:var(--accent);
+  text-decoration:none; border-bottom:1px solid var(--accent);
+}
+.pub-link:hover{ opacity:0.75; }
+
+/* Concurrent/overlapping roles nested inside one timeline node */
+.pub-parallel{
+  margin-top:0.7rem; padding-left:1rem; border-left:2px solid var(--line);
+  display:flex; flex-direction:column; gap:0.5rem;
+}
+.pub-parallel-item{ font-size:0.85rem; line-height:1.5; color:var(--muted); }
+.pub-parallel-item strong{ color:var(--ink); font-weight:600; }
+
+/* Non-role context marker on the Timeline (e.g. an explained gap) */
+.pub-item-gap::before{ background:var(--bg); border:2px solid var(--muted); }
+.pub-item-gap .pub-title{ font-style:italic; font-weight:500; color:var(--muted); }
+
+/* ---- Education & Skills page ---- */
+.skills-section{ margin-top:2.6rem; }
+.skill-group{ margin-bottom:1.5rem; }
+.skill-group-label{ font-weight:600; font-size:0.85rem; margin:0 0 0.6rem; }
+.skill-pills{ display:flex; flex-wrap:wrap; gap:0.5rem; }
+.skill-pill{
+  font-family:ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace;
+  font-size:0.72rem; color:var(--accent);
+  border:1px solid var(--line); border-radius:999px; padding:0.2rem 0.65rem;
+}

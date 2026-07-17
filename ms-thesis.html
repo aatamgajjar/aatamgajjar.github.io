@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MS Thesis — Aatam Gajjar</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="canonical" href="https://www.aatamgajjar.com/ms-thesis.html">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>
+  (function () {
+    if (location.hostname === "aatamgajjar.github.io") {
+      var robotsMeta = document.createElement("meta");
+      robotsMeta.name = "robots";
+      robotsMeta.content = "noindex, nofollow";
+      document.head.appendChild(robotsMeta);
+    }
+    try {
+      var saved = localStorage.getItem("theme");
+      if (saved) document.documentElement.setAttribute("data-theme", saved);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<div class="toggle-row">
+  <button id="theme-toggle-btn" class="theme-toggle" onclick="toggleTheme(this)" aria-label="Toggle dark mode"></button>
+</div>
+
+<div id="site-header" data-variant="slim"></div>
+
+<div class="page">
+  <p class="eyebrow">MS Thesis</p>
+  <h2 class="page-title">Learning to Adapt: Combining Machine Learning and Model-based Control for Fault-tolerant Control of Process Systems</h2>
+  <p class="thesis-meta">MS, Chemical Engineering, UC Davis &middot; Advised by Nael El-Farra &middot; Research: Jan 2022 &ndash; May 2023 &middot; Degree awarded Jun 2026</p>
+
+  <div class="thesis-media">
+    <img src="assets/img/projects/ms-workflow.png" alt="Fault-tolerant control workflow diagram showing fault information feeding a neural network, controller reconfiguration, and the process control loop with model-based state estimation">
+  </div>
+
+  <div class="thesis-body">
+    <p>My master's thesis builds a framework for catching and correcting sensor faults in chemical plants in real time, especially when multiple sensors fail at once. Neural networks estimate how far off a faulty sensor's reading is, and that estimate feeds into a model-based controller that adjusts itself to keep the process stable despite the bad data.</p>
+    <p>I built this first for a single process unit, then extended it to networks of interconnected units, comparing a centralized approach (one estimator sees everything) against a decentralized one (each unit only sees its own data). The centralized version performed substantially better when multiple units failed at once, a concrete case for centralized monitoring in plants made up of many connected units.</p>
+  </div>
+</div>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>
